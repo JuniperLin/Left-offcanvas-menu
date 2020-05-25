@@ -1,0 +1,330 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* wrap section */
+.wrap {
+  max-width: 100%;
+  height: 100vh;
+  background: linear-gradient(#7e7e7e, #3f3d56, #3f3d56, #3f3d56);
+  position: relative;
+  overflow: hidden;
+}
+.watermark {
+  position: absolute;
+  background-image: url(../img/watermark.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+/* hamburger section */
+.hamburger {
+  position: absolute;
+  width: 50px;
+  height: 31px;
+  top: 25px;
+  left: 75px;
+  cursor: pointer;
+  z-index: 20;
+}
+.line1,
+.line2,
+.line3 {
+  width: 50px;
+  height: 5px;
+  background: white;
+  position: absolute;
+  transition-duration: 0.5s;
+}
+.line2 {
+  left: 50%;
+  transform: translateX(-50%) translateY(260%);
+}
+.line3 {
+  transform: translateY(520%);
+}
+.side-open .line1 {
+  width: 45px;
+  transform: translateX(7%) translateY(260%) rotate(45deg);
+}
+.side-open .line2 {
+  width: 0px;
+}
+.side-open .line3 {
+  width: 45px;
+  transform: translateX(7%) translateY(250%) rotate(-45deg);
+}
+
+/* side-menu section */
+.side-menu {
+  background: #6c63ff;
+  min-width: 25%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  overflow: hidden;
+  transition: 0.9s ease;
+  z-index: 19;
+}
+.side-menu ul {
+  padding: 100px 75px;
+}
+.side-menu li {
+  padding: 20px 0;
+  border-bottom: 2px solid #3f3d566b;
+}
+.side-menu li a {
+  font-family: Anton;
+  font-size: 28px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: white;
+  transition: 0.5s;
+}
+.side-menu li a:hover {
+  color: #c1c1c1;
+}
+.side-open .side-menu {
+  transform: translateX(0%);
+}
+
+/* main section */
+.main {
+  width: 100%;
+  height: 100%;
+  transition: 0.9s ease-in-out all;
+  position: relative;
+}
+.main:before {
+  content: "";
+  position: absolute;
+  z-index: 18;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  transition: 0.9s ease;
+}
+.side-open .main:before {
+  opacity: 0.5;
+}
+
+/* header section */
+.header {
+  width: 100%;
+  height: 70px;
+}
+.header img {
+  margin: 0 auto;
+  display: block;
+  transition: 0.9s ease;
+}
+.side-open .header img {
+  padding-left: 410px;
+}
+
+/* hero section */
+.hero {
+  font-family: Anton;
+  color: white;
+  position: absolute;
+  padding-left: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.9s ease;
+  z-index: 17;
+}
+.hero h1 {
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.hero p {
+  letter-spacing: 2px;
+  font-size: 23px;
+  margin-bottom: 60px;
+}
+.hero-bt {
+  display: inline-block;
+}
+.hero-bt a {
+  display: block;
+  background: #ff6584;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+  padding: 14px 60px;
+  transition: 0.9s ease;
+}
+.hero-bt a:hover {
+  background: #bd4a61;
+}
+.side-open .hero {
+  transform: translateX(360px) translateY(-50%);
+  width: 410px;
+}
+
+/* spaceman section */
+.into-space {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.man {
+  width: 850px;
+  height: 600px;
+  position: absolute;
+  bottom: 70px;
+  right: -70px;
+}
+.ship {
+  width: 130px;
+  height: 450px;
+  position: absolute;
+  bottom: 150px;
+  right: 450px;
+  animation: upDown 3s infinite ease-in-out;
+}
+@keyframes upDown {
+  0% {
+    bottom: 150px;
+  }
+
+  50% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 150px;
+  }
+}
